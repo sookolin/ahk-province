@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="style.profile.css" rel="stylesheet">
+		<link href="https://sookolin.github.io/forum/sf-pro-font/stylesheet.css" rel="stylesheet">
+		<style>
+			body {
+				border-radius: 15px;
+				background-color: #14161a;
+				font-family: 'SF Pro Display';
+			}
+			.title-bar {
+				-webkit-app-region: drag;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 60px;
+				z-index: 1;
+			}
+			.title-btn:hover {
+			  cursor: pointer;
+			  opacity: .8;
+			}
+
+			.title-btn.rollup {
+				position: absolute;
+				right: 88px;
+				top: 32px;
+				z-index: 1;
+			}
+			.title-btn.close {
+				-webkit-app-region: no-drag;
+				position: absolute;
+				right: 45px;
+				top: 35px;
+				width: 14px;
+				height: 14px;
+				z-index: 1;
+			}
+		</style>
+		<script type="text/javascript">
+            function pageShow(event, pageName) {
+				var i, page;
+
+				tabcontent = document.getElementsByClassName("page");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+
+				document.getElementById(pageName).style.display = "block";
+				event.currentTarget.className += " active";
+			}
+			
+            function pageBack(event, pageName) {
+				var i, page;
+
+				tabcontent = document.getElementsByClassName("page");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+
+				document.getElementById("mainPanel").style.display = "block";
+				event.currentTarget.className += " active";
+			}
+			function playSound(sound) {
+				var song = document.getElementById(sound);
+				song.volume = 0.2;
+				if (song.paused) {
+					song.play();
+				}
+				else {
+					song.pause();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<audio id="sound"><source src="click.mp3"></audio>
+		<div onclick="playSound('sound')">
+			<header>
+				<div class="title-bar" onmousedown="neutron.DragTitleBar()"></div>
+				<div class="title-btn close" onclick="neutron.Close()">
+					<img alt="" src="close.png">
+				</div>
+				<div class="title-btn rollup" onclick="neutron.Minimize()">
+					<img alt="" src="rollup.png">
+				</div>
+				<div class="alert-header">
+					<div>
+						<div class="alert" id="alert"></div>
+					</div>
+				</div>
+			</header>
+			<div id="main-page" class="main-page">
+				<div class="copywriting">AHK Province & JST Project</div>
+				<div class="nav-page">
+					<div class="logo">
+						<img alt="" src="logo_province.png" style="width: 128px; height: 118px;">
+					</div>
+					<div class="items___list">
+						<div class="item acitve">
+							<img  class="ico" alt="" src="joy.png" style="color: #fff">
+							<div onclick="pageShow(event, 'mainPanel')" class="name">AHK Province</div>
+						</div>
+						<div class="item line">
+							<img class="ico" alt="" src="line.png" style="width: 100%; height: 1px;">
+						</div>
+						<div onclick="pageShow(event, 'settingsPanel')" class="item bottom default">
+							<img class="ico" alt="" src="ico_settings.png">
+							<div class="name">Настройки</div>
+						</div>
+						<div class="item default" style="display: none">
+							<div onclick="pageShow(event, 'peoplePanel')" class="name">Гражданский</div>
+						</div>
+						<div id="mo">
+						</div>
+					</div>
+				</div>
+				<div class="info page" id="mainPanel" style="display: block;">
+					<div class="pageTitle">Информация</div>
+					<div class="info block">
+						<div class="card">
+							<b style="text-decoration: none; color: grey; cursor: pointer;" onclick="ahk.OpenLink(event, 'https://vk.com/provinceahk')">AHK Province</b> — это своего рода помощник, который способен облегчить жизнь сотруднику фракции пятого сервера (в данной версии, пока что, только МО).
+							<br>
+							<br>
+							Вам не нужно биндить отыгровки в игре, изменяя вручную свои данные. Нужно всего лишь авторизаваться используя вашу страницу ВКонтакте и радоваться. После авторизации данные автоматически подставляются в необходимые отыгровки, которые уже встроены в программу.
+							<br>
+							<br>
+							В программе отсутствует вредоносное ПО и она полностью безопасна. Но для дополнительной оптимизации и предотвращения возникновения ошибок – рекомендуется добавить программу в исключения антивируса.
+							<br>
+							<br>
+							Скрипт является собтсвенностью <span style="text-decoration: none; color: grey; cursor: pointer;" onclick="ahk.OpenLink(event, 'https://vk.com/provinceahk')">AHK Province</span>, а разработчиком <span style="text-decoration: none; color: grey; cursor: pointer;" onclick="ahk.OpenLink(event, 'https://vk.com/sookolin')">Alex_Sokolin</span> — руководитель пятого сервера, тестер JST Project, и пр.
+						</div>
+					</div>
+					
+					<div class="newsTitle">Новости из группы</div>
+					<div class="newsBlock" style="border-radius: 20px;">
+						<div class="item" id="item_1">
+							<div id="photo_1">
+								<div class="background"></div>
+							</div>
+							<div class="date" id="date_1"></div>
+							<div class="title"></div>
+							<div class="desc" id="text_1"></div>
+							<div class="openPost">
+								<div class="ico"><img alt="" src="open.png"></div>
+							</div>
+						</div>
+						<div class="item" id="item_2">
+							<div id="photo_2">
+								<div class="background"></div>
+							</div>
+							<div class="date" id="date_2"></div>
+							<div class="title"></div>
+							<div class="desc" id="text_2"></div>
+							<div class="openPost">
+								<div class="ico"><img alt="" src="open.png"></div>
+							</div>
+						</div>
+						<div class="item" id="item_3">
+							<div id="photo_3">
+								<div class="background"></div>
+							</div>
+							<div class="date" id="date_3"></div>
+							<div class="title"></div>
+							<div class="desc" id="text_3"></div>
+							<div class="openPost">
+								<div class="ico"><img alt="" src="open.png"></div>
+							</div>
+						</div>
+						<div class="item" id="item_4">
+							<div id="photo_4">
+								<div class="background"></div>
+							</div>
+							<div class="date" id="date_4"></div>
+							<div class="title"></div>
+							<div class="desc" id="text_4"></div>
+							<div class="openPost">
+								<div class="ico"><img alt="" src="open.png"></div>
+							</div>
+						</div>
+						<div class="item" id="item_5">
+							<div id="photo_5">
+								<div class="background"></div>
+							</div>
+							<div class="date" id="date_5"></div>
+							<div class="title"></div>
+							<div class="desc" id="text_5"></div>
+							<div class="openPost">
+								<div class="ico"><img alt="" src="open.png"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="people page pagejs" id="peoplePanel" style="display: none;">
+					<div class="pageTitle">Гражданский<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
+					<div class="people block">
+						<div class="card">
+							Чо эта...
+						</div>
+					</div>
+				</div>
+				<div class="mo page pagejs" id="moPanel" style="display: none;">
+					<div class="pageTitle">МО<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
+					<div class="mo panel first" style="border-radius: 20px;">
+						<div class="card">
+							<div class="title">
+								Общее
+							</div>
+							<img class="ico" alt="" src="line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
+							<div class="content">
+								<p>Приветствие <i>( Alt+Q )</i></p>
+								<p>Достать, убрать пропуск <i>( /ud, Alt+Del )</i></p>
+								<p>Отметка времени + скриншот <i>( F12 )</i></p>
+								<p>Рация <i>( Alt+-, Alt+= )</i></p>
+								<p>Балаклава <i>( /маска+, /маска- )</i></p>
+							</div>
+						</div>
+						<div class="card" style="margin-top: 15px;">
+							<div class="title">
+								Оружие
+							</div>
+							<img class="ico" alt="" src="line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
+							<div class="content">
+								<p>АК-74м <i>( Ctrl+1, Alt+1 )</i></p>
+								<p>Пистолет <i>( Ctrl+2, Alt+2 )</i></p>
+								<p>Электрошокер <i>( Ctrl+3, Alt+3 )</i></p>
+								<p>СВД <i>( Ctrl+4, Alt+4 )</i></p>
+							</div>
+						</div>
+						<div class="card" style="margin-top: 15px;">
+							<div class="title">
+								Прочее
+							</div>
+							<img class="ico" alt="" src="line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
+							<div class="content">
+								<p>Уступите дорогу <i>( /уступ )</i></p>
+								<p>Прижмитесь к обочине (мегафон) <i>( /пред1 )</i></p>
+								<p>Применение оружия (мегафон) <i>( /пред2 )</i></p>
+							</div>
+						</div>
+						<div class="card" style="margin-top: 15px;">
+							<div class="title">
+								Собеседование
+							</div>
+							<img class="ico" alt="" src="line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
+							<div class="content">
+								<p>Спросить куда пришёл <i>( /с1 )</i></p>
+								<p>Спросить ФИО и возраст <i>( /с2 )</i></p>
+								<p>Спросить сколько лет и гре проживает <i>( /с3 )</i></p>
+								<p style="margin-top: 10px;">Попросить паспорт <i>( /с4 )</i></p>
+								<p>Взять и отдать паспорт <i>( /с5, /с6 )</i></p>
+								<p style="margin-top: 10px;">Спросить про медкомиссию <i>( /с7 )</i></p>
+								<p>Попросить мед. справку <i>( /с8 )</i></p>
+								<p>Взять и отдать мед. справку <i>( /с9 )</i></p>
+								<p style="margin-top: 10px;">Спросить про образование <i>( /с10 )</i></p>
+								<p>Попросить диплом <i>( /с11 )</i></p>
+								<p>Взять и отдать диплом <i>( /с12 )</i></p>
+								<p style="margin-top: 10px;">Попросить ТУ <i>( /с13 )</i></p>
+								<p>Взять и отдать ТУ <i>( /с14, /с15 )</i></p>
+								<p style="margin-top: 10px;">Попросить ВБ <i>( /с16 )</i></p>
+								<p>Взять и отдать ВБ <i>( /с17, /с18 )</i></p>
+								<p style="margin-top: 10px;">Попросить ТК <i>( /с19 )</i></p>
+								<p>Взять и отдать ТК <i>( /с20, /с21 )</i></p>
+							</div>
+						</div>
+					</div>
+					<div class="mo panel second" style="border-radius: 20px;">
+						<div class="card">
+							<div class="title">
+								Офицерские
+							</div>
+							<img class="ico" alt="" src="line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
+							<div class="content">
+								<p>Посадить в карцер <i>( /setprison )</i></p>
+								<p>Наряд вне очереди <i>( /givetask )</i></p>
+								<p>Выдать/забрать увал <i>( /увал+, /увал- )</i></p>
+							</div>
+						</div>
+						<div class="card" style="margin-top: 15px;">
+							<div class="title">
+								Доклады в рацию
+							</div>
+							<img class="ico" alt="" src="line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
+							<div class="content">
+								<p>Заступил, сдал смену <i>( Alt+PgUp, Alt+PgDn )</i></p>
+								<p>Гарнизонный патруль <i>( /гп1-5 )</i></p>
+								<p>Наряд тылового обеспечения <i>( /нто1-6 )</i></p>
+							</div>
+						</div>
+						<div class="card" style="margin-top: 15px;">
+							<div class="title">
+								КПП
+							</div>
+							<img class="ico" alt="" src="line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
+							<div class="content">
+								<p>Проверка документов <i>( /док1-2 )</i></p>
+								<p>Провокация военнослужащего <i>( Alt+F1 )</i></p>
+								<p>Предупреждение <i>( Alt+F2 )</i></p>
+								<p>Приказ в /r о готовности <i>( Alt+F3 )</i></p>
+								<p>Приказ в /r об открытии огня <i>( Alt+F4 )</i></p>
+								<p>Видеорегистратор <i>( /регистратор )</i></p>
+							</div>
+						</div>
+						<div class="card" style="margin-top: 15px;">
+							<div class="title">
+								Дежурства
+							</div>
+							<img class="ico" alt="" src="line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
+							<div class="content">
+								<p>КПП <i>( /кпп1-3 )</i></p>
+								<p>Казарма <i>( /казарма1-3 )</i></p>
+								<p>Мед. пункт <i>( /мед1-3 )</i></p>
+								<p>Парк <i>( /парк1-3 )</i></p>
+								<p>Столовая <i>( /столовая1-3 )</i></p>
+								<p>Склад <i>( /склад1-3 )</i></p>
+								<p>Штаб <i>( /штаб1-3 )</i></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="settings page pagejs" id="settingsPanel" style="display: none;">
+					<div class="pageTitle">Настройки<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
+					<div class="settings panel first">
+						<div class="title main">Основные</div>
+						<img class="ico" alt="" src="line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
+						<div class="content">
+							<form onsubmit="ahk.Submit(event)">
+								<div style="top: 25px; position: absolute;">
+									<input type="text" id="vkLink" name="vkLink" placeholder="Ссылка на вашу страницу ВКонтакте" title="Чтобы вставить ссылку – нажмите ПКМ">
+									<div style="color: #b1b1b1; margin-left: 30px; margin-top: 20px" id="dataText">
+									</div>
+								</div>
+								<button class="btn_first save" type="submit">Сохранить</button>
+							</form>	
+						</div>
+					</div>
+					<div class="toolsBar">
+						<div class="title mini" style="font-weight: 600; font-size: 16px;">Примечание</div>
+						<div class="description">Нажмите на кнопку левее, чт<span onclick="ahk.NinjaFunction(event)">о</span>бы сохранить ваши данные!</div>
+						<button class="btn_second report" onclick="ahk.Report(event, 'active')">Баг репорт</button>
+						<button class="btn_second feedback" onclick="ahk.FeedBack(event)">Отзывы</button>
+					</div>
+				</div>
+			</div>
+			<div id="msg">
+				<div class="msg-box">
+					<div>
+						<div class="msg overlay">
+							<div class="panel">
+								<div class="title" id="msg-title"></div>
+								<div class="desc" id="msg-desc"></div>
+								<div class="input" id="msg-input"></div>
+								<div class="btn_second" onclick="ahk.MsgOk(event)">Хорошо</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="report-box">
+					<div>
+						<div class="report overlay">
+							<div class="panel">
+								<div class="title" id="report-title">БАГ РЕПОРТ</div>
+								<div class="desc" id="report-desc">Если у вас появилось это окошко, то вы, вероятно, нашли баг или хотите что-то предложить по улучшению данного АХК.<br>Изложите суть как можно понятнее, но как можно короче.</div>
+								<form onsubmit="ahk.SendReport(event)">
+									<div class="input" id="report-input">
+										<textarea id="reportInput" maxlength="300" rows="5"></textarea>
+									</div>
+									<button class="btn_second" type="submit">Хорошо</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="reg-box">
+					<div>
+						<div class="reg overlay">
+							<div class="panel">
+								<div class="title" id="reg-title">ПОДТВЕРЖДЕНИЕ</div>
+								<div class="desc" id="reg-desc">
+									<p>Ваш ID: <span id="userID"></span></p>
+									<br>
+									<p>Для подтверждения – напишите в личные сообщения сообщества "<span id="driveNumber"></span>" (скопировано)!</p>
+								</div>
+								<div class="btn_second" onclick="ahk.SendGroup(event)">Написать сообщение</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="loader-page" class="loader-page">
+				<div class="loader title">PROVINCE</div>
+			</div>
+			<div id="styleFrac">
+				
+			</div>
+		</div>
+	</body>
+</html>
