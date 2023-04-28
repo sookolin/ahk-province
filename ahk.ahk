@@ -17,6 +17,27 @@ version := 1
 
 #NoEnv
 
+files_img := ["close.png", "open.png", "ico_settings.png", "joy.png", "line.png", "logo_province.png", "rollup.png"]
+files_render := ["interface.html", "style.profile.css"]
+files_sounds := ["click.mp3"]
+
+FileCreateShortcut,  %A_ScriptFullPath%, %A_Desktop%\AHK Province.lnk,,, AHK Province — самый лучший скрипт для взаимодейтсвия с Провинцией`, не правла ли?
+
+/*
+For index, file_name in files_img
+{
+	IfNotExist, %A_ScriptDir%/img/%file_name%
+}
+For index, file_name in files_sounds
+{
+	IfNotExist, %A_ScriptDir%/sounds/%file_name%
+}
+For index, file_name in files_render
+{
+	; IfNotExist, %A_ScriptDir%/sounds/%file_name%
+}
+*/
+
 RegRead, vkID, HKEY_LOCAL_MACHINE, SOFTWARE\AutoHotkey\AHK Province\, vkID
 global vkID
 IniRead, gameFolder, data.profile, GAME, gameFolder
