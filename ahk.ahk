@@ -17,6 +17,13 @@ version := 1
 
 #NoEnv
 
+FileDelete, % loader := A_Temp "\loader.jpg"
+UrlDownloadToFile, https://raw.githubusercontent.com/sookolin/ahk-province/main/loader.jpg, % loader
+Gui -Caption
+Gui, loader:Show, Center h309 w550,
+Gui, loader:Add, Picture, x0 y0 h309 w550, % loader
+
+
 files_img := ["close.png", "open.png", "ico_settings.png", "joy.png", "line.png", "logo_province.png", "rollup.png"]
 files_render := ["interface.html", "style.profile.css"]
 files_sounds := ["click.mp3"]
@@ -26,14 +33,23 @@ FileCreateShortcut,  %A_ScriptFullPath%, %A_Desktop%\AHK Province.lnk,,, AHK Pro
 For index, file_name in files_img
 {
 	IfNotExist, %A_ScriptDir%\img\%file_name%
+	{
+
+	}
 }
 For index, file_name in files_sounds
 {
 	IfNotExist, %A_ScriptDir%\sounds\%file_name%
+	{
+
+	}
 }
 For index, file_name in files_render
 {
 	IfNotExist, %A_ScriptDir%\sounds\%file_name%
+	{
+
+	}
 }
 
 Sleep 5000
@@ -207,6 +223,7 @@ If RegExMatch(update_text, "i)^!update (.*)$", update_text)
 }
 
 neutron.Gui("+LabelNeutron")
+Gui, loader:Destroy
 neutron.Show("w1290 h745")
 neutron.Gui("+Lastfound")
 
