@@ -23,20 +23,20 @@ files_sounds := ["click.mp3"]
 
 FileCreateShortcut,  %A_ScriptFullPath%, %A_Desktop%\AHK Province.lnk,,, AHK Province — самый лучший скрипт для взаимодейтсвия с Провинцией`, не правла ли?
 
-/*
 For index, file_name in files_img
 {
-	IfNotExist, %A_ScriptDir%/img/%file_name%
+	IfNotExist, %A_ScriptDir%\img\%file_name%
 }
 For index, file_name in files_sounds
 {
-	IfNotExist, %A_ScriptDir%/sounds/%file_name%
+	IfNotExist, %A_ScriptDir%\sounds\%file_name%
 }
 For index, file_name in files_render
 {
-	; IfNotExist, %A_ScriptDir%/sounds/%file_name%
+	IfNotExist, %A_ScriptDir%\sounds\%file_name%
 }
-*/
+
+Sleep 5000
 
 RegRead, vkID, HKEY_LOCAL_MACHINE, SOFTWARE\AutoHotkey\AHK Province\, vkID
 global vkID
