@@ -652,7 +652,8 @@ select {
     position: relative;
     top: -274px;
     z-index: 1;
-    box-shadow: 0px -140px 50px -25px rgba(0, 0, 0, 0.4) inset;
+    box-shadow: 0px -140px 50px -25px rgba(0, 0, 0, 0.3) inset;
+    -webkit-box-shadow: 0px -140px 50px -25px rgba(0, 0, 0, 0.3) inset;
 }
 .newsBlock .item .openPost {
     position: absolute;
