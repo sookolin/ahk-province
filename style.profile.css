@@ -758,7 +758,7 @@ select {
     left: 786px;
     right: 34px;
 }
-.page .mo.panel {
+.page .f.panel {
     position: absolute;
     overflow-y: scroll;
     bottom: 34px;
@@ -790,7 +790,7 @@ select {
     overflow-y: hidden;
     padding-bottom: 20px;
 }
-.page .mo.panel .content {
+.page .f.panel .content {
     position: relative;
     left: 0;
     top: 20px;
@@ -801,10 +801,10 @@ select {
     padding-bottom: 23px;
     border-radius: 20px;
 }
-.page .mo.panel .content p i {
+.page .f.panel .content p i {
     color: rgb(84, 85, 97);
 }
-.page .mo.panel .content p {
+.page .f.panel .content p {
     max-width: 400px;
     color: hsla(0,0%,100%,.767);
     font-style: normal;
@@ -812,7 +812,7 @@ select {
     font-size: 14px;
     line-height: 20px;
 }
-.page .mo.panel .title {
+.page .f.panel .title {
     left: 25px;
     top: 20px;
     max-width: 224px;
@@ -849,6 +849,6 @@ select {
     padding: 15px;
 }
 td:first-child {
-    width: 45%;
+    width: 47%;
     font-weight: bold;
 }
