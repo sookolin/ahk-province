@@ -94,7 +94,7 @@
 				</div>
 			</header>
 			<div id="main-page" class="main-page">
-				<div class="copywriting"><span id="stats">%</span> – AHK Province & JST Project</div>
+				<div class="copywriting"><span id="stats">%</span> & AHK Province & JST Project</div>
 				<div class="nav-page">
 					<div class="logo">
 						<img alt="" src="img\logo_province.png" style="width: 128px; height: 118px;">
@@ -114,10 +114,8 @@
 						<div class="item default" style="display: none">
 							<div onclick="pageShow(event, 'peoplePanel')" class="name">Гражданский</div>
 						</div>
-						<div id="mo">
-						</div>
-						<div id="mz">
-						</div>
+						<div id="mo"></div>
+						<div id="mz"></div>
 					</div>
 				</div>
 				<div class="info page" id="mainPanel" style="display: block;">
@@ -322,7 +320,8 @@
 							</div>
 						</div>
 					</div>
-				</div><div class="mz page pagejs" id="mzPanel" style="display: none;">
+				</div>
+				<div class="mz page pagejs" id="mzPanel" style="display: none;">
 					<div class="pageTitle">МЗ<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
 					<div class="f panel first" style="border-radius: 20px;">
 						<div class="card">
@@ -377,8 +376,24 @@
 									<div style="color: #b1b1b1; margin-left: 30px; margin-top: 20px" id="dataText">
 									</div>
 								</div>
-								<button class="btn_first save" type="submit">Сохранить</button>
+								<button class="btn_first save" type="submit">Авторизоваться</button>
 							</form>	
+						</div>
+					</div>
+					<div class="settings panel second">
+						<div class="title main">Панель лекций</div>
+						<img class="ico" alt="" src="img\line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
+						<div class="content">
+							<div style="top: 25px; position: absolute;">
+								<input type="text" id="pathLecture" name="pathLecture" style="width: 262px!important;" placeholder="Путь к файлу с лекцией" readonly>
+							</div>
+							<div style="top: 83px; position: absolute;">
+								<textarea type="text" id="textLecture" name="textLecture" style="width: 387px; height: 244px;" placeholder="Зачитать выбранную лекцию ( /лекция )
+
+Пример заполения файла лекции:
+say #ffff00 Текст лекции!" readonly></textarea>
+							</div>
+							<button class="btn_second lecture" onclick="ahk.OpenLecture(event)" type="submit">Открыть</button>
 						</div>
 					</div>
 					<div class="toolsBar">

@@ -246,6 +246,9 @@ body .border-interface {
     background: #1a1e22;
     border-radius: 15px;
 }
+.page .settings.panel.second {
+    background: #1a1e22;
+}
 .page .panel .title, .page .toolsBar .title {
 	left: 25px;
     top: 20px;
@@ -349,6 +352,15 @@ body .border-interface {
     position: fixed;
     margin-bottom: 10px;
 }
+.page .btn_second.lecture {
+    width: 110px;
+    line-height: 50px;
+    height: 48px;
+    right: 21px;
+    position: absolute;
+    margin-bottom: 10px;
+    top: 30px;
+}
 .page .btn_second.updates {
 	width: 200px!important;
     margin-top: 7px!important;
@@ -393,7 +405,7 @@ input[type=text], select, textarea {
     font-size: 14px;
     width: 380px;
     border: 1px solid hsla(0,0%,80%,0);
-    border-radius: 10px;
+    border-radius: 15px;
     background: #101215!important;
     outline: none;
     color: #b1b1b1;
@@ -803,6 +815,18 @@ select {
 }
 .page .f.panel .content p i {
     color: rgb(84, 85, 97);
+}
+.page .settings.panel .content p i {
+    color: rgb(84, 85, 97);
+}
+.page .settings.panel .content p {
+    max-width: 400px;
+    color: hsla(0,0%,100%,.767);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 5px 0px 23px 20px;
 }
 .page .f.panel .content p {
     max-width: 400px;
