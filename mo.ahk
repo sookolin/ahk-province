@@ -775,3 +775,122 @@ Alt & 4::
 	SendChat("me отдал трудовую книжку обратно человеку напротив", "0")
 	Return
 }
+
+
+:?:/дпг1::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Заступил в дежурство. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг2::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] КПП. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг3::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Вышка-1	. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг4::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Вышка-2. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг5::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Вышка-3. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг6::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Вышка-4. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг7::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Ангар. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг8::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Склад. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг9::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Столовая. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг10::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Медицинский пункт. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг11::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Казарма. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг12::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Штаб. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
+:?:/дпг13::
+{
+	SendInput, {Enter}
+	Sleep 500
+	SendChat("[ДпГ] Сдал дежурство. Код-1. " rankName " " fullName1 ".", "0")
+	Sleep, 250
+	Screen()
+	Return
+}
