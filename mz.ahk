@@ -11,6 +11,7 @@
     Else If (A_Hour < 00) {
         greeting := "Доброй ночи!"
     }
+    Return greeting
 }
 
 Alt & Q::
