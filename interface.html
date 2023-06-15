@@ -314,40 +314,61 @@
 					<div class="f panel first" style="border-radius: 20px;">
 						<div class="card">
 							<div class="title">
-								
+								Лечение
 							</div>
 							<img class="ico" alt="" src="img\line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
 							<div class="content">
-								<p> <i>(  )</i></p>
-							</div>
-						</div>
-						<div class="card" style="margin-top: 15px;">
-							<div class="title">
-								
-							</div>
-							<img class="ico" alt="" src="img\line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
-							<div class="content">
-								<p> <i>(  )</i></p>
+								<p>Приветствие <i>( Alt+Q )</i></p>
+								<p>Спросить данные <i>( Alt+1 )</i></p>
+								<p>Заполнить данные в отделении/АСМП <i>( Alt+2, Alt+2<sup> x2</sup> )</i></p>
+								<p>Задать вопросы <i>( Alt+3 )</i></p>
+								<p>Осмотреть <i>( Alt+X )</i></p>
+								<p>Лечение в отделении/АСМП <i>( /helpmed, /heal )</i></p>
+								<p>Стационар <i>( Alt+N )</i></p>
+								<p style="margin-top: 10px;">Подсказка с препаратами <i>( Alt+Tab<sup> x2</sup> )</i></p>
 							</div>
 						</div>
 					</div>
 					<div class="f panel second" style="border-radius: 20px;">
 						<div class="card">
 							<div class="title">
-								
+								Препараты
 							</div>
 							<img class="ico" alt="" src="img\line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
 							<div class="content">
-								<p> <i>(  )</i></p>
-							</div>
-						</div>
-						<div class="card" style="margin-top: 15px;">
-							<div class="title">
-								
-							</div>
-							<img class="ico" alt="" src="img\line.png" style="position: relative; width: 100%; height: 1px; top: 25px;">
-							<div class="content">
-								<p> <i>(  )</i></p>
+								<p>Голова <i>( /голова )</i></p>
+								<p>Мигрень <i>( /мигрень )</i></p>
+								<p>Переедание <i>( /переедание )</i></p>
+								<p>Отравление <i>( /отравление )</i></p>
+								<p>Гастрит <i>( /гастрит )</i></p>
+								<p>Желудок <i>( /желудок )</i></p>
+								<p>Тошнота <i>( /тошнота )</i></p>
+								<p>Изжога <i>( /изжога )</i></p>
+								<p>Ушиб <i>( /ушиб )</i></p>
+								<p>Обезболивающее <i>( /обезболивающее )</i></p>
+								<p>Запор дупла <i>( /запор )</i></p>
+								<p>Диарея <i>( /диарея )</i></p>
+								<p>Геморрой <i>( /геморрой )</i></p>
+								<p>Суставы <i>( /суставы )</i></p>
+								<p>Судороги <i>( /судороги )</i></p>
+								<p>Витамины <i>( /витамины )</i></p>
+								<p>Аллегрия <i>( /аллергия )</i></p>
+								<p>Простуда <i>( /простуда )</i></p>
+								<p>Насморк <i>( /насморк )</i></p>
+								<p>Горло <i>( /горло )</i></p>
+								<p>Сыпь или зуд <i>( /сыпьзуд )</i></p>
+								<p>Жар <i>( /жар )</i></p>
+								<p>Печень <i>( /печень )</i></p>
+								<p>Половой джюджюн <i>( /половойорган )</i></p>
+								<p>Сердце <i>( /сердце )</i></p>
+								<p>Зубы <i>( /зубы )</i></p>
+								<p>Глаза <i>( /глаза )</i></p>
+								<p>Ожог <i>( /ожог )</i></p>
+								<p>Уши <i>( /уши )</i></p>
+								<p>Почки <i>( /почки )</i></p>
+								<p>Давление <i>( /давление )</i></p>
+								<p>Мочевой <i>( /мочевой )</i></p>
+								<p>Снотворное <i>( /снотворное )</i></p>
 							</div>
 						</div>
 					</div>
@@ -409,6 +430,9 @@ say #ffff00 Текст лекции!" readonly></textarea>
 					<div>
 						<div class="report overlay">
 							<div class="panel">
+								<div class="title-btn close" style="right: 40px; top: 30px;" onclick="ahk.CloseReport(event)">
+									<img alt="" src="img\close.png">
+								</div>
 								<div class="title" id="report-title">БАГ РЕПОРТ</div>
 								<div class="desc" id="report-desc">Если у вас появилось это окошко, то вы, вероятно, нашли баг или хотите что-то предложить по улучшению данного АХК.<br>Изложите суть как можно понятнее, но как можно короче.</div>
 								<form onsubmit="ahk.SendReport(event)">
