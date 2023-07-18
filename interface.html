@@ -114,11 +114,15 @@
 						<div class="item default" style="display: none">
 							<div onclick="pageShow(event, 'peoplePanel')" class="name">Гражданский</div>
 						</div>
+						<div class="item default" style="display: block">
+							<div onclick="pageShow(event, 'resourcePanel')" class="name">fffffffffffff</div>
+						</div>
 						<div id="mo"></div>
 						<div id="mz"></div>
+						<div id="resource"></div>
 					</div>
 				</div>
-				<div class="info page" id="mainPanel" style="display: block;">
+				<div class="info page" id="mainPanel" style="display: none;">
 					<div class="pageTitle">Информация</div>
 					<div class="info block">
 						<div class="card">
@@ -128,10 +132,10 @@
 							Вам не нужно биндить отыгровки в игре, изменяя вручную свои данные. Нужно всего лишь авторизаваться используя вашу страницу ВКонтакте и радоваться. После авторизации данные автоматически подставляются в необходимые отыгровки, которые уже встроены в программу.
 							<br>
 							<br>
+							Также имеется помощник с большой базой различных ресурсов: таймциклы, эффекты, звуки, темы. Выберите нужный вам ресурс и он автоматически будет установлен и заменен.
+							<br>
+							<br>
 							В программе отсутствует вредоносное ПО и она полностью безопасна. Но для дополнительной оптимизации и предотвращения возникновения ошибок – рекомендуется добавить программу в исключения антивируса.
-							<br>
-							<br>
-							Скрипт является собтсвенностью <span style="text-decoration: none; color: grey; cursor: pointer;" onclick="ahk.OpenLink(event, 'https://vk.com/provinceahk')">AHK Province</span>, а разработчиком <span style="text-decoration: none; color: grey; cursor: pointer;" onclick="ahk.OpenLink(event, 'https://vk.com/sookolin')">Alex_Sokolin</span> — бывший руководитель пятого сервера, тестер JST Project.
 						</div>
 					</div>
 					
@@ -373,6 +377,27 @@
 						</div>
 					</div>
 				</div>
+				<div class="resource page pagejs" id="resourcePanel" style="display: block;">
+					<div class="pageTitle">Ресурсы<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
+					<div class="r panel">
+						<div class="row">
+							<div class="card-body">
+								<div style="background-color: greenyellow; height: 75px;">
+
+								</div>
+								<div style="font-size: 18px; padding: 10px 15px 10px 15px; color: hsla(0,0%,100%,.767); font-weight: 500;">
+									Стандартный
+								</div>
+							</div>
+							<div class="card-body">
+							</div>
+							<div class="card-body">
+							</div>
+							<div class="card-body">
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="settings page pagejs" id="settingsPanel" style="display: none;">
 					<div class="pageTitle">Настройки<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
 					<div class="settings panel first">
@@ -382,11 +407,19 @@
 							<form onsubmit="ahk.Submit(event)">
 								<div style="top: 25px; position: absolute;">
 									<input type="text" id="vkLink" name="vkLink" placeholder="Ссылка на вашу страницу ВКонтакте" title="Чтобы вставить ссылку – нажмите ПКМ">
-									<div style="color: #b1b1b1; margin-left: 30px; margin-top: 20px" id="dataText">
+									<div style="color: #b1b1b1; margin-left: 30px; margin-top: 130px" id="dataText">
 									</div>
 								</div>
 								<button class="btn_first save" type="submit">Авторизоваться</button>
 							</form>	
+							<div style="top: 83px; position: absolute;">
+								<input type="text" id="pathGame" name="pathGame" style="width: 262px!important;" placeholder="Путь к папке с игрой" readonly>
+							</div>
+							<button class="btn_second gamefolder" onclick="ahk.OpenGameFolder(event)" type="submit">Открыть</button>
+							<div style="top: 141px; position: absolute;">
+								<input type="text" id="testKey" name="testKey" style="width: 252px!important;" placeholder="Ключ доступа">
+							</div>
+							<button class="btn_second testkey" onclick="ahk.SaveTestKey(event)" type="submit">Сохранить</button>
 						</div>
 					</div>
 					<div class="settings panel second">
