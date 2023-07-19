@@ -119,13 +119,11 @@
 						<div class="item line" style="margin-top: -25px!important;">
 							<img class="ico" alt="" src="img\line.png" style="width: 100%; height: 1px;">
 						</div>
-						<div class="item default" onclick="pageShow(event, 'peoplePanel')">
+						<div class="item default" onclick="pageShow(event, 'peoplePanel')" style="display: none;">
 							<div class="name">Гражданский</div>
 						</div>
 						<div id="mo"></div>
 						<div id="mz"></div>
-						<div class="item line">
-							<img class="ico" alt="" src="img\line.png" style="width: 100%; height: 1px;">
 						</div>
 						<div id="resource"></div>
 						<div onclick="pageShow(event, 'settingsPanel')" class="item bottom default">
@@ -134,7 +132,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="info page" id="mainPanel" style="display: none;">
+				<div class="info page" id="mainPanel" style="display: block;">
 					<div class="pageTitle">Информация</div>
 					<div class="info block">
 						<div class="card">
@@ -389,7 +387,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="timecyc page pagejs" id="timecycPanel" style="display: block;">
+				<div class="timecyc page pagejs" id="timecycPanel" style="display: none;">
 					<div class="pageTitle">Таймциклы<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
 					<div class="r panel">
 						<div class="row">
