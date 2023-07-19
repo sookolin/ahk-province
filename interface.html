@@ -4,6 +4,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link href="style.profile.css" rel="stylesheet">
 		<link href="https://sookolin.github.io/forum/sf-pro-font/stylesheet.css" rel="stylesheet">
+		<link href="https://sookolin.github.io/forum/ico-custom-font/style.css" rel="stylesheet">
+		<script src="https://5s.prov.site/admin/src/js/jquery-3.4.1.min.js"></script>
 		<style>
 			body {
 				border-radius: 15px;
@@ -75,6 +77,16 @@
 				}
 			}
 		</script>
+		<script>
+			$(function() {
+				$(".button.settings").click(function() {
+					let a = $(this).closest(".button-block");
+					a.siblings(".img-block").toggleClass("active");
+					a.siblings(".title-block").toggleClass("active");
+					a.siblings(".drawing-block").toggleClass("active");
+				  });
+			});
+		</script>
 	</head>
 	<body>
 		<audio id="sound"><source src="sounds\click.mp3"></audio>
@@ -104,22 +116,25 @@
 							<img  class="ico" alt="" src="img\joy.png" style="color: #fff">
 							<div onclick="pageShow(event, 'mainPanel')" class="name">AHK Province</div>
 						</div>
+						<div class="item line" style="margin-top: -25px!important;">
+							<img class="ico" alt="" src="img\line.png" style="width: 100%; height: 1px;">
+						</div>
+						<div class="item default" onclick="pageShow(event, 'peoplePanel')">
+							<div class="name">Гражданский</div>
+						</div>
+						<div id="mo"></div>
+						<div id="mz"></div>
 						<div class="item line">
 							<img class="ico" alt="" src="img\line.png" style="width: 100%; height: 1px;">
 						</div>
+						<div id="resource"></div>
 						<div onclick="pageShow(event, 'settingsPanel')" class="item bottom default">
 							<img class="ico" alt="" src="img\ico_settings.png">
 							<div class="name">Настройки</div>
 						</div>
-						<div class="item default" style="display: none">
-							<div onclick="pageShow(event, 'peoplePanel')" class="name">Гражданский</div>
-						</div>
-						<div id="mo"></div>
-						<div id="mz"></div>
-						<div id="resource"></div>
 					</div>
 				</div>
-				<div class="info page" id="mainPanel" style="display: block;">
+				<div class="info page" id="mainPanel" style="display: none;">
 					<div class="pageTitle">Информация</div>
 					<div class="info block">
 						<div class="card">
@@ -374,19 +389,46 @@
 						</div>
 					</div>
 				</div>
-				<div class="resource page pagejs" id="resourcePanel" style="display: none;">
-					<div class="pageTitle">Ресурсы<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
+				<div class="timecyc page pagejs" id="timecycPanel" style="display: block;">
+					<div class="pageTitle">Таймциклы<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
 					<div class="r panel">
 						<div class="row">
 							<div class="card-body">
-								<div style="background-color: greenyellow; height: 75px;">
-
+								<div class="img-block" style="background-image: url(https://info.gtaprovince.ru/src/img/timecyc/2/logo.jpg);"></div>
+								<div class="drawing-block">
+									<div class="item">Низкая</div>
+									<div class="item">Средняя</div>
+									<div class="item">Высокая</div>
+									<div class="item">Ультра</div>
 								</div>
-								<div style="font-size: 18px; padding: 10px 15px 10px 15px; color: hsla(0,0%,100%,.767); font-weight: 500;">
+								<div class="title-block">
 									Стандартный
+								</div>
+								<div class="title-block active">
+									Прорисовка
+								</div>
+								<div class="button-block">
+									<div class="button settings">
+										<i class="icon icon-gear"></i>
+									</div>
+									<div class="button save">
+										<i class="icon icon-download"></i>
+									</div>
 								</div>
 							</div>
 							<div class="card-body">
+								<div class="img-block" style="background-image: url(https://info.gtaprovince.ru/src/img/timecyc/2/logo.jpg);"></div>
+								<div class="title-block">
+									Стандартный
+								</div>
+								<div class="button-block">
+									<div class="button settings">
+										<i class="icon icon-gear"></i>
+									</div>
+									<div class="button save">
+										<i class="icon icon-download"></i>
+									</div>
+								</div>
 							</div>
 							<div class="card-body">
 							</div>
