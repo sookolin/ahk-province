@@ -435,7 +435,7 @@ input[type=text], select, textarea {
     font-family: SF Pro Display;
     user-select: none;
 }
-input[type=text], select, textarea, input[type=number] {
+input[type=number] {
     font-weight: bold;
     font-size: 14px;
     width: 50px;
