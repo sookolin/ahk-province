@@ -438,13 +438,13 @@ input[type=text], select, textarea {
 input[type=number] {
     font-weight: bold;
     font-size: 14px;
-    width: 50px;
+    width: 74px;
     border: 1px solid hsla(0,0%,80%,0);
     border-radius: 15px;
     background: #101215!important;
     outline: none;
     color: #b1b1b1;
-    padding: 8px;
+    padding: 5px 0;
 	position: relative;
 	margin: 0px;
 	left: 15px;
@@ -452,6 +452,7 @@ input[type=number] {
     user-select: none;
     text-align: center;
 }
+
 #reportInput {
     left: -10px!important;
     margin-top: 35px!important;
@@ -944,7 +945,7 @@ td:first-child {
     transition: height .5s ease;
 }
 .r.panel .card-body .img-block.active {
-    height: 30%;
+    height: 40%;
 }
 .r.panel .card-body .title-block {
     position: absolute;
@@ -993,15 +994,11 @@ td:first-child {
 }
 .r.panel .card-body .drawing-block {
     position: absolute;
-    top: 40%;
+    top: 45%;
     text-align: center;
     left: 10px;
     right: 10px;;
     z-index: 1;
-}
-.r.panel .card-body .drawing-block.active {
-    top: 31%;
-    transition: top .5s ease;
 }
 .r.panel .card-body .drawing-block .item {
     appearance: none; 
