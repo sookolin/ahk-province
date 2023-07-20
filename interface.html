@@ -97,6 +97,12 @@
 					$(this).siblings('.drawing-input').val($(this).val());
 				});
 			});
+
+			$(function() {
+				$(document).on('input', '.drawing-input', function() {
+					$(this).siblings('.drawing-slider').val($(this).val());
+				});
+			});
 		</script>
 	</head>
 	<body style="user-select: none;">
@@ -142,7 +148,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="info page" id="mainPanel" style="display: block;">
+				<div class="info page" id="mainPanel" style="display: none;">
 					<div class="pageTitle">Информация</div>
 					<div class="info block">
 						<div class="card">
@@ -397,7 +403,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="timecyc page pagejs" id="timecycPanel" style="display: none;">
+				<div class="timecyc page pagejs" id="timecycPanel" style="display: block;">
 					<div class="pageTitle">Таймциклы<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
 					<div class="r panel">
 						<div class="row">
@@ -426,7 +432,7 @@
 								<div class="img-block" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #1a1e22), url(https://info.gtaprovince.ru/src/img/timecyc/2/logo.jpg);"></div>
 								<div class="drawing-block" style="display: inline-block;">
 									<input class="item drawing-slider" type="range" min="100" max="99900" step="100" value="100"> 
-									<input type="number" class="drawing-input" name="vkLink" value="100" min="100" max="99900">
+									<input type="number" class="drawing-input" name="vkLink" value="100" min="100" max="99900" minlength="3" maxlength="5">
 								</div>
 								<div class="title-block">
 									Стандартный
