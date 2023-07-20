@@ -41,6 +41,11 @@
 				height: 14px;
 				z-index: 1;
 			}
+			::selection {
+				background-color: #222529;
+				padding: 5px 10px;
+				border-radius: 10px;
+			}
 		</style>
 		<script type="text/javascript">
             function pageShow(event, pageName) {
@@ -80,15 +85,21 @@
 		<script>
 			$(function() {
 				$(".button.settings").click(function() {
-					let a = $(this).closest(".button-block");
-					a.siblings(".img-block").toggleClass("active");
-					a.siblings(".title-block").toggleClass("active");
-					a.siblings(".drawing-block").toggleClass("active");
+					let div = $(this).closest(".button-block");
+					div.siblings(".img-block").toggleClass("active");
+					div.siblings(".title-block").toggleClass("active");
 				  });
 			});
 		</script>
+		<script>
+			$(function() {
+				$(document).on('input change', '.drawing-slider', function() {
+					$(this).siblings('.drawing-input').val($(this).val());
+				});
+			});
+		</script>
 	</head>
-	<body>
+	<body style="user-select: none;">
 		<audio id="sound"><source src="sounds\click.mp3"></audio>
 		<div onclick="playSound('sound')">
 			<header>
@@ -391,12 +402,10 @@
 					<div class="r panel">
 						<div class="row">
 							<div class="card-body">
-								<div class="img-block" style="background-image: url(https://info.gtaprovince.ru/src/img/timecyc/2/logo.jpg);"></div>
-								<div class="drawing-block"> 
-									<div class="item">Низкая</div>
-									<div class="item">Средняя</div>
-									<div class="item">Высокая</div>
-									<div class="item">Ультра</div>
+								<div class="img-block" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #1a1e22), url(https://info.gtaprovince.ru/src/img/timecyc/2/logo.jpg);"></div>
+								<div class="drawing-block" style="display: inline-block;">
+									<input class="item drawing-slider" type="range" min="100" max="99900" step="100" value="100"> 
+									<input type="number" class="drawing-input" name="vkLink" value="100" min="100" max="99900">
 								</div>
 								<div class="title-block">
 									Стандартный
@@ -413,24 +422,6 @@
 									</div>
 								</div>
 							</div>
-							<div class="card-body">
-								<div class="img-block" style="background-image: url(https://info.gtaprovince.ru/src/img/timecyc/2/logo.jpg);"></div>
-								<div class="title-block">
-									Стандартный
-								</div>
-								<div class="button-block">
-									<div class="button settings">
-										<i class="icon icon-gear"></i>
-									</div>
-									<div class="button save">
-										<i class="icon icon-download"></i>
-									</div>
-								</div>
-							</div>
-							<div class="card-body">
-							</div>
-							<div class="card-body">
-							</div>
 						</div>
 					</div>
 				</div>
@@ -442,7 +433,7 @@
 						<div class="content">
 							<form onsubmit="ahk.Submit(event)">
 								<div style="top: 25px; position: absolute;">
-									<input type="text" id="vkLink" name="vkLink" placeholder="Ссылка на вашу страницу ВКонтакте" title="Чтобы вставить ссылку – нажмите ПКМ">
+									<input type="text" id="vkLink" name="vkLink" placeholder="Ссылка на вашу страницу ВКонтакте" title="Чтобы вставить ссылку – нажмите ПКМ" style="user-select: auto!important;">
 									<div style="color: #b1b1b1; margin-left: 30px; margin-top: 130px" id="dataText">
 									</div>
 								</div>
@@ -506,7 +497,7 @@ say #ffff00 Текст лекции!" readonly></textarea>
 								<div class="desc" id="report-desc">Если у вас появилось это окошко, то вы, вероятно, нашли баг или хотите что-то предложить по улучшению данного АХК.<br>Изложите суть как можно понятнее, но как можно короче.</div>
 								<form onsubmit="ahk.SendReport(event)">
 									<div class="input" id="report-input">
-										<textarea id="reportInput" maxlength="300" rows="5"></textarea>
+										<textarea id="reportInput" maxlength="300" rows="5" style="user-select: auto!important;"></textarea>
 									</div>
 									<button class="btn_second" type="submit">Отправить</button>
 								</form>
