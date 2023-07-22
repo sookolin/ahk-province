@@ -1002,7 +1002,7 @@ td:first-child {
     position: absolute;
     bottom: 12px;
     right: 20px;
-    z-index: 3;
+    z-index: 1;
 }
 .r.panel .card-body .button-block i {
     position: relative;
