@@ -435,10 +435,28 @@ input[type=text], select, textarea {
     font-family: SF Pro Display;
     user-select: none;
 }
+input[type=text].range {
+    font-weight: bold;
+    font-size: 14px;
+    width: 64px;
+    border: 1px solid hsla(0,0%,80%,0);
+    border-radius: 15px;
+    background: #101215!important;
+    outline: none;
+    color: #b1b1b1;
+    padding: 5px 0;
+	position: relative;
+	margin: 0px;
+	left: 15px;
+    font-family: SF Pro Display;
+    user-select: none;
+    text-align: center;
+    height: 16px;
+}
 input[type=number] {
     font-weight: bold;
     font-size: 14px;
-    width: 74px;
+    width: 64px;
     border: 1px solid hsla(0,0%,80%,0);
     border-radius: 15px;
     background: #101215!important;
@@ -935,21 +953,40 @@ td:first-child {
     position: relative;
 }
 .r.panel .card-body .img-block {
-    position: relative;
+    position: absolute;
     background-size: auto 100%;
     background-position: center;
     height: 67%; /*67*/
+    width: 300px;
     overflow: hidden;
     outline-offset: -1px;
     z-index: 3;
-    transition: height .5s ease;
+    transition: all .5s ease;
+    opacity: 1;
+}
+.r.panel .card-body .img-block-range {
+    position: absolute;
+    background-size: auto 100%;
+    background-position: center;
+    height: 67%; /*67*/
+    width: 300px;
+    overflow: hidden;
+    outline-offset: -1px;
+    z-index: 3;
+    transition: all .5s ease;
+    opacity: 0;
 }
 .r.panel .card-body .img-block.active {
+    opacity: 0;
+    height: 40%;
+}
+.r.panel .card-body .img-block-range.active {
+    opacity: 1;
     height: 40%;
 }
 .r.panel .card-body .title-block {
     position: absolute;
-    font-size: 19px;
+    font-size: 17px;
     padding: 10px 15px 10px 18px;
     color: hsla(0,0%,100%,.767);
     font-weight: 500;
@@ -964,6 +1001,7 @@ td:first-child {
     position: absolute;
     bottom: 12px;
     right: 20px;
+    z-index: 3;
 }
 .r.panel .card-body .button-block i {
     position: relative;
@@ -995,7 +1033,6 @@ td:first-child {
 .r.panel .card-body .drawing-block {
     position: absolute;
     top: 45%;
-    text-align: center;
     left: 10px;
     right: 10px;;
     z-index: 1;
@@ -1005,6 +1042,24 @@ td:first-child {
     cursor: pointer;
     outline: none;
     width: 150px;
+}
+.r.panel .card-body .drawing-block .icon-exclamation-circle {
+    position: absolute;
+    color: #313539;
+    font-size: 18px;
+    top: 5px;
+    margin-left: 6px;
+    transition: all .3s;
+    cursor: pointer;
+}
+.r.panel .card-body .drawing-block .icon-exclamation-circle:hover {
+    color: orangered;
+}
+.r.panel .card-body .drawing-range {
+    display: inline;
+    font-size: 14px;
+    color: #838383;
+    font-weight: 600;
 }
 input[type="range"]::-ms-fill-lower, input[type="range"]::-ms-fill-upper {
     border-radius: 15px;

@@ -87,6 +87,7 @@
 				$(".button.settings").click(function() {
 					let div = $(this).closest(".button-block");
 					div.siblings(".img-block").toggleClass("active");
+					div.siblings(".img-block-range").toggleClass("active");
 					div.siblings(".title-block").toggleClass("active");
 				  });
 			});
@@ -94,7 +95,68 @@
 		<script>
 			$(function() {
 				$(document).on('input change', '.drawing-slider', function() {
-					$(this).siblings('.drawing-input').val($(this).val());
+					let drawingBlock = $(this).closest(".drawing-block");
+					let titleBlock = drawingBlock.siblings(".title-block");
+					let drawingRange = titleBlock.find(".drawing-range");
+					var val = $(this).val();
+					var color = "#838383";
+					var size = "14px";
+					if ((val >= 1) && (val <= 5)) {
+						var range = "(низкая)";
+						var rangeInput = val + "0%";
+					}
+					else if ((val >= 6) && (val <= 10)) {
+						var range = "(средняя)";
+						var rangeInput = val + "0%";
+					}
+					else if ((val >= 11) && (val <= 15)) {
+						var range = "(высокая)";
+						var rangeInput = val + "0%";
+					}
+					else if ((val >= 16) && (val <= 24)) {
+						var range = "(ультра)";
+						if (val == 16) {
+							var rangeInput = "200%";
+						}
+						else if (val == 17) {
+							var rangeInput = "300%";
+						}
+						else if (val == 18) {
+							var rangeInput = "400%";
+						}
+						else if (val == 19) {
+							var rangeInput = "500%";
+						}
+						else if (val == 20) {
+							var rangeInput = "600%";
+						}
+						else if (val == 21) {
+							var rangeInput = "700%";
+						}
+						else if (val == 22) {
+							var rangeInput = "800%";
+						}
+						else if (val == 23) {
+							var rangeInput = "900%";
+						}
+						else {
+							var rangeInput = "1000%";
+						}
+					}
+					else if (val = 25) {
+						var range = "(экстрим)";
+						var rangeInput = "100000%";
+						var size = "12px";
+					}
+					else {
+						var range = "(вне диапазона)";
+						var rangeInput = "-/-";
+						var color = "red";
+					}
+					$(this).siblings('.drawing-input').val(rangeInput);
+					$(this).siblings('.drawing-input').css("font-size", size);
+					drawingRange.text(range);
+					drawingRange.css("color", color);
 				});
 			});
 
@@ -407,59 +469,19 @@
 					<div class="pageTitle">Таймциклы<span  onclick="pageBack(event)" class="pageBack name">, на главную?</span></div>
 					<div class="r panel">
 						<div class="row">
-							<div class="card-body">
+							<div class="card-body" style="position: relative;">
 								<div class="img-block" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #1a1e22), url(https://info.gtaprovince.ru/src/img/timecyc/2/logo.jpg);"></div>
+								<div class="img-block-range" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #1a1e22), url(https://sookolin.github.io/forum/test.png);"></div>
 								<div class="drawing-block" style="display: inline-block;">
-									<input class="item drawing-slider" type="range" min="100" max="99900" step="100" value="100"> 
-									<input type="number" class="drawing-input" name="vkLink" value="100" min="100" max="99900">
+									<input class="item drawing-slider" type="range" min="1" max="25" step="1" value="1" style="margin-top: 10px; margin-left: 20px;"> 
+									<i class="icon icon-exclamation-circle" onclick="ahk.OpenInfoRange(event)"></i>
+									<input type="text" class="drawing-input range" name="vkLink" value="10%" style="position: absolute; left: 204px!important" readonly><br>
 								</div>
 								<div class="title-block">
 									Стандартный
 								</div>
 								<div class="title-block active">
-									Прорисовка
-								</div>
-								<div class="button-block">
-									<div class="button settings">
-										<i class="icon icon-gear"></i>
-									</div>
-									<div class="button save">
-										<i class="icon icon-download"></i>
-									</div>
-								</div>
-							</div>
-							<div class="card-body">
-								<div class="img-block" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #1a1e22), url(https://info.gtaprovince.ru/src/img/timecyc/2/logo.jpg);"></div>
-								<div class="drawing-block" style="display: inline-block;">
-									<input class="item drawing-slider" type="range" min="100" max="99900" step="100" value="100"> 
-									<input type="number" class="drawing-input" name="vkLink" value="100" min="100" max="99900" minlength="3" maxlength="5">
-								</div>
-								<div class="title-block">
-									Стандартный
-								</div>
-								<div class="title-block active">
-									Прорисовка
-								</div>
-								<div class="button-block">
-									<div class="button settings">
-										<i class="icon icon-gear"></i>
-									</div>
-									<div class="button save">
-										<i class="icon icon-download"></i>
-									</div>
-								</div>
-							</div>
-							<div class="card-body">
-								<div class="img-block" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #1a1e22), url(https://info.gtaprovince.ru/src/img/timecyc/2/logo.jpg);"></div>
-								<div class="drawing-block" style="display: inline-block;">
-									<input class="item drawing-slider" type="range" min="100" max="99900" step="100" value="100"> 
-									<input type="number" class="drawing-input" name="vkLink" value="100" min="100" max="99900" minlength="3" maxlength="5">
-								</div>
-								<div class="title-block">
-									Стандартный
-								</div>
-								<div class="title-block active">
-									Прорисовка
+									Прорисовка <span class="drawing-range">(низкая)</span>
 								</div>
 								<div class="button-block">
 									<div class="button settings">
