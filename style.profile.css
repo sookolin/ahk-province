@@ -523,6 +523,7 @@ select {
     padding: 30px;
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
+    z-index: 10;
 }
 .overlay .image {
     right: 0;
@@ -1026,9 +1027,11 @@ td:first-child {
 .r.panel .button.save {
     background-color: #00e2de;
     margin-left: 3px;
+    z-index: 1;
 }
 .r.panel .button.settings {
     background-color: #fec401;
+    z-index: 1;
 }
 .r.panel .card-body .drawing-block {
     position: absolute;
