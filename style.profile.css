@@ -961,7 +961,7 @@ td:first-child {
     width: 300px;
     overflow: hidden;
     outline-offset: -1px;
-    z-index: 3;
+    z-index: 2;
     transition: all .5s ease;
     opacity: 1;
 }
@@ -973,7 +973,7 @@ td:first-child {
     width: 300px;
     overflow: hidden;
     outline-offset: -1px;
-    z-index: 3;
+    z-index: 2;
     transition: all .5s ease;
     opacity: 0;
 }
