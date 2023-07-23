@@ -835,10 +835,12 @@ select {
 .r.panel {
     left: 304px;
     top: 134px;
-    right: 28px;
-    bottom: 28px;
+    right: 34px;
+    bottom: 34px;
     border-radius: 20px!important;
     position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .page .update.panel.first {
     position: absolute;
@@ -941,15 +943,19 @@ td:first-child {
     width: 47%;
     font-weight: bold;
 }
+.r .row {
+    width: 1000px;
+    margin-top: -12px;
+}
 .r .row .card-body {
     background-color: #1a1e22;
     border-radius: 20px;
-    width: 300px;
+    width: 303px;
     height: 150px;
     display: inline-block;
 }
 .r .row .card-body {
-    margin: 6px;
+    margin: 12px 12px -4px 0px;
     overflow: hidden;
     position: relative;
 }
@@ -958,33 +964,37 @@ td:first-child {
     background-size: auto 100%;
     background-position: center;
     height: 67%; /*67*/
-    width: 300px;
+    background-position: center;
+    width: 303px;
     overflow: hidden;
     outline-offset: -1px;
     z-index: 2;
     transition: all .5s ease;
     opacity: 1;
+    background-size: 360px;
 }
 .r.panel .card-body .img-block-range {
     position: absolute;
     background-size: auto 100%;
     background-position: center;
     height: 67%; /*67*/
-    width: 300px;
+    width: 303px;
     overflow: hidden;
     outline-offset: -1px;
     z-index: 2;
     transition: all .5s ease;
     opacity: 0;
-    background-size: 300px;
+    background-size: 360px;
 }
 .r.panel .card-body .img-block.active {
     opacity: 0;
     height: 40%;
+    background-size: 300px;
 }
 .r.panel .card-body .img-block-range.active {
     opacity: 1;
     height: 40%;
+    background-size: 300px;
 }
 .r.panel .card-body .title-block {
     position: absolute;
